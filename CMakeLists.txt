@@ -27,7 +27,7 @@ if ( APPLE )
 endif()
 
 # Main project information
-project( wonkyhonky
+project( anime
     LANGUAGES
         CXX
     VERSION
