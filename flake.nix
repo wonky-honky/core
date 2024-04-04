@@ -46,7 +46,7 @@
 
           rec {
             # Update the name to something that suites your project.
-            name = "anime_shell";
+            name = "wonkyhonky_core_shell";
             stdenv = pkgs.llvmPackages_18.libcxxStdenv;
             packages = with pkgs; [
               # Development Tools
@@ -56,6 +56,8 @@
               python3
               git
               #            llvmPackages_18.libraries.libcxx
+              llvmPackages_18.libcxx
+              llvmPackages_18.compiler-rt
               cmake
               cmakeCurses
               ninja
@@ -92,6 +94,8 @@
             #      '';
           };
 
-        packages.default = pkgs.callPackage ./default.nix { };
+        packages.default = pkgs.callPackage ./default.nix {
+          #          stdenv = pkgs.llvmPackages_18.libcxxStdenv;
+        };
       });
 }

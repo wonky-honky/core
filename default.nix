@@ -1,7 +1,7 @@
 { lib, llvmPackages_18, cmake, pkgs }:
 
 llvmPackages_18.libcxxStdenv.mkDerivation rec {
-  pname = "anime";
+  pname = "wonkyhonky_core";
   version = "0.1.0";
 
   src = ./.;
@@ -12,7 +12,8 @@ llvmPackages_18.libcxxStdenv.mkDerivation rec {
     llvmPackages_18.bintools # why the fuck is this not in stdenv but other shit is
     #    llvmPackages_18.clang
     #    llvmPackages_18.clang-tools
-
+    llvmPackages_18.compiler-rt
+    llvmPackages_18.libcxx
     cmake
     cmakeCurses
     ninja

@@ -27,7 +27,7 @@ if ( APPLE )
 endif()
 
 # Main project information
-project( anime
+project( core
     LANGUAGES
         CXX
     VERSION
@@ -36,10 +36,13 @@ project( anime
 
 # Create our library
 add_library( ${PROJECT_NAME} SHARED )
-
+set_property(TARGET ${PROJECT_NAME}
+  PROPERTY CXX_STANDARD 20
+  PROPERTY CXX_EXTENSIONS OFF
+)
 target_compile_features( ${PROJECT_NAME}
     PRIVATE
-        cxx_std_17
+        cxx_std_20
 )
 
 # LIB_ARCH is the architecture being built. It is set to the build system's architecture.
